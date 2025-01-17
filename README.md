@@ -1,0 +1,2 @@
+# AutomaticAbsenceExcuse
+No
