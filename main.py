@@ -2,14 +2,31 @@ import pywinauto
 from pywinauto import Application
 from pywinauto import Desktop
 
+USERNAME = "Alan Goźliński"
+
 def main():
     try:
-        app = Application(backend="uia").connect(title_re=r".*Google Chrome.*")
+        app = Application(backend="uia").connect(title_re=r".*Microsoft Teams.*")
+        
     except:
-        app = Application(backend="uia").start(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
+        Application(backend="uia").start(r"ms-teams.exe")
+        while(True):
+            try:
+                app = Application(backend="uia").connect(title_re=r".*Microsoft Teams.*")
+                break
+            except:
+                print("no")
 
-    main_window = app.window(title_re=r".*Google Chrome.*")
-    search_bar = main_window.child_window(title="Pasek adresu i wyszukiwania").draw_outline()
+    main_window = app.window(title_re=r".*Microsoft Teams.*")
+    main_window.set_focus()
+    
+    a = Desktop.windows()
+    for window in a:
+        print(window.window_text())
+    
+    if main_window.child_window(title_re=rf".*{USERNAME}.*", control_type="MenuItem").exists(timeout=7):
+        main_window.child_window(title_re=rf".*{USERNAME}.*", control_type="MenuItem").invoke()
+        
 
 if __name__ == "__main__":
     main()
