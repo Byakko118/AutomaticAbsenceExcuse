@@ -8,45 +8,42 @@ import time
 USERNAME = "Alan Goźliński"
 EMAIL = "agozlinski352@technikumkreatywne.pl"
 PASSWORD = "(GoldenExpRequiem12#118)"
-TEACHER = "Jacek Konczalski"  # This can be changed later
+TEACHER = "Jacek Konczalski"
+MESSAGE = "JKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJK"  
+
+def wait_element_clickable(driver, locator, timeout=20):
+    """Waits for an element to be clickable and returns it."""
+    WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((By.XPATH, locator)))
+    return driver.find_element(By.XPATH, locator)
 
 def main():
-    driver = webdriver.Chrome()
-    driver.implicitly_wait(25)
-    driver.get("https://www.microsoft.com/pl-pl/microsoft-teams/log-in")
+    with webdriver.Chrome() as driver:
+        driver.get("https://www.microsoft.com/pl-pl/microsoft-teams/log-in")
 
-    # Log in
-    login = driver.find_element(By.CLASS_NAME, "btn ")
-    login.click()
+        wait_element_clickable(driver, "//a[@aria-label='Zaloguj się do usługi Microsoft Teams']").click()
 
-    windows = driver.window_handles
-    driver.switch_to.window(windows[1])
+        WebDriverWait(driver, 10).until(EC.number_of_windows_to_be(2))
+        driver.switch_to.window(driver.window_handles[1])
 
-    email_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.NAME, "loginfmt")))
-    email_input.send_keys(EMAIL)
+        login = wait_element_clickable(driver, "//input[@name='loginfmt']")
+        login.send_keys(EMAIL, Keys.ENTER)
 
-    next_btn = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, "idSIButton9")))
-    next_btn.click()
+        password = wait_element_clickable(driver, "//input[@name='passwd']")
+        password.send_keys(PASSWORD, Keys.ENTER)
 
-    pswd_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.NAME, "passwd")))
-    pswd_input.send_keys(PASSWORD)
+        wait_element_clickable(driver, "//input[@type='submit' and @id='idSIButton9']").click()
 
-    finish_btn = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, "idSIButton9")))
-    finish_btn.click()
+        search = wait_element_clickable(driver, "//input[@id='ms-searchux-input']")
+        search.send_keys(TEACHER, Keys.ENTER)
 
-    yes_btn = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, "idSIButton9")))
-    yes_btn.click()
+        wait_element_clickable(driver, "//button[@value='people']").click()
 
-    search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.ID, "ms-searchux-input")))
-    search.send_keys(TEACHER)
-    search.send_keys(Keys.ENTER)
+        wait_element_clickable(driver, "//li[@aria-posinset='0']").click()
 
-    people = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[value='people']")))
-    people.click()
+        message_box = wait_element_clickable(driver, "//div[contains(@id, 'new-message')]")
+        message_box.send_keys(MESSAGE, Keys.ENTER)
 
-    time.sleep(10)  
-
-    driver.quit()
+        time.sleep(2)
 
 if __name__ == "__main__":
     main()
