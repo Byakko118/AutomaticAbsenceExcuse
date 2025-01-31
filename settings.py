@@ -142,7 +142,6 @@ gender_layout.addWidget(female_radio)
 layout.addWidget(gender_label)
 layout.addLayout(gender_layout)
 
-# Create separate button groups to allow both genders to be selected independently
 teacher_gender_group = QButtonGroup()
 teacher_gender_group.addButton(male_radio)
 teacher_gender_group.addButton(female_radio)
