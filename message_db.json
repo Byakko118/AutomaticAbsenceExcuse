@@ -1,0 +1,45 @@
+{
+    "przywitanie" : [
+        "Dzień dobry,",
+        "Witam,"  
+    ],
+    "prosba" : [
+        "Proszę o usprawiedliwienie mojej nieobecności w dniach od <od> do <do>.",
+        "Piszę z prośbą o usprawiedliwienie moich nieobecności w dniach <od> do <do>.",
+        "Był<u-a>bym wdzięczn<u-a/y> gdyby za moją prośbą usprawiedliwił<t-a> <pan/pani> moje nieobecności w dniach od <od> do <do>."
+    ],
+    "powod-wstep" : [
+        "Powodem mojej nieobecności było to, że",
+        "Byłem nieobecny z powodu faktu, że",
+        "Moja nieobecność była spowodowana fakterm tego, że"
+    ],
+    "powód" : [
+        "zgubił<u-a/e>m klucze do domu.",
+        "moje zwierzęta domowe urządziły strajk.",
+        "nie mogł<u-a/e>m znaleźć odpowiednich skarpetek.",
+        "zamienił<u-a/e>m się miejscami z kimś w lustrze.",
+        "przypadkowo wciągn<u-e/ą>ł<u-a/e>m się w maraton oglądania seriali.",
+        "uczestniczył<u-a/e>m w zawodach w jedzeniu pizzy.",
+        "zgubił<u-a/e>m poczucie czasu podczas medytacji.",
+        "zatrzymało mnie UFO.",
+        "świętował<u-a/e>m Dzień Pizzy zbyt intensywnie.",
+        "wpadł<u-a/e>m w pułapkę własnych myśli.",
+        "zamienił<u-a/e>m miejsca z sąsiadem na cały dzień.",
+        "niespodziewanie odwiedziła mnie rodzina z daleka.",
+        "czasoprzestrzeń się zacięła.",
+        "nie mogł<u-a/e>m opuścić strefy komfortu.",
+        "mój mózg miał awarię systemu.",
+        "zgubił<u-a/e>m się w parku rozrywki dla dorosłych.",
+        "zabłądził<u-a/e>m w labiryncie z kartonu.",
+        "brał<u-a/e>m udział w wyścigu z żółwiem.",
+        "ktoś zamienił mój samochód na pojazd kosmiczny.",
+        "zgubił<u-a/e>m telefon w kieszeni spodni."
+    ],
+    "pozegnanie" : [
+        "Pozdrawiam.",
+        "Z góry dziękuję i pozdrawiam.",
+        "Pozdrawiam i życzę miłego dnia."
+    ]
+    
+    
+}
