@@ -2,9 +2,18 @@ import configparser
 import json
 import random
 import re
+from datetime import datetime, timedelta
+
+def replace_date(text):
+    today = datetime.today()
+    two_weeks_ago = today - timedelta(weeks=2)
+
+    text = text.replace("<od>", two_weeks_ago.strftime("%d.%m"))
+    text = text.replace("<do>", today.strftime("%d.%m"))
+
+    return text
 
 def replace_tags(message, u_gender, t_gender):
-    """Replace tags in the message based on user and teacher gender."""
     replacements = {
         '<u-a>': 'a' if u_gender == 'female' else '',
         '<u-a/y>': 'a' if u_gender == 'female' else 'y',
@@ -43,10 +52,8 @@ def generate_message():
     powod = replace_tags(powod, u_gender, t_gender)
     pozegnanie = replace_tags(pozegnanie, u_gender, t_gender)
 
-    print("Przywitanie:", przywitanie)
-    print("Prośba:", prosba)
-    print("Powód wstęp:", powod_wstep)
-    print("Powód:", powod)
-    print("Pożegnanie:", pozegnanie)
+    prosba = replace_date(prosba)
 
-generate_message()
+    return f"{przywitanie}\n{prosba} {powod_wstep} {powod}\n{pozegnanie}"
+
+print(generate_message())

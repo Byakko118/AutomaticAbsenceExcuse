@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import configparser
+import message_generator
 
 config = configparser.ConfigParser()
 config.read('config.ini', 'utf-8')
@@ -15,7 +16,10 @@ details_config = config['Details']
 email = user_config.get('EMAIL')
 password = user_config.get('PASSWORD')
 teacher = details_config.get('TEACHER')
-message = details_config.get('MESSAGE')
+if details_config.get('is_auto_generated') == "False":
+    message = details_config.get('MESSAGE')
+else:
+    message = message_generator.generate_message()
 
 print('Email:', email)
 print('Password:', password)
