@@ -3,6 +3,16 @@ import json
 import random
 import re
 from datetime import datetime, timedelta
+import os
+import sys
+
+def get_data_file_path(filename):
+    if getattr(sys, 'frozen', False):
+        bundle_dir = sys._MEIPASS  
+    else:
+        bundle_dir = os.path.abspath(os.path.dirname(__file__))
+
+    return os.path.join(bundle_dir, filename)
 
 def replace_date(text):
     today = datetime.today()
@@ -29,15 +39,18 @@ def replace_tags(message, u_gender, t_gender):
     return message
 
 def generate_message():
+    config_path = get_data_file_path('config.ini')
+    json_path = get_data_file_path('message_db.json')
+
     config = configparser.ConfigParser()
-    config.read('config.ini', 'utf-8')
+    config.read(config_path, encoding='utf-8')
 
     details_config = config['Details']
 
     t_gender = details_config.get("teacher_gender")
     u_gender = details_config.get("user_gender")
 
-    with open('message_db.json', 'r', encoding='utf-8') as file:
+    with open(json_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
     przywitanie = random.choice(data['przywitanie'])
@@ -56,4 +69,5 @@ def generate_message():
 
     return f"{przywitanie} {prosba} {powod_wstep} {powod} {pozegnanie}"
 
-print(generate_message())
+if __name__ == "__main__":
+    print(generate_message())
