@@ -1,7 +1,7 @@
 {
     "przywitanie" : [
-        "Dzień dobry,",
-        "Witam,"  
+        "Dzień dobry.",
+        "Witam."  
     ],
     "prosba" : [
         "Proszę o usprawiedliwienie mojej nieobecności w dniach od <od> do <do>.",
@@ -10,11 +10,10 @@
     ],
     "powod-wstep" : [
         "Powodem mojej nieobecności było to, że",
-        "Byłem nieobecny z powodu faktu, że",
-        "Moja nieobecność była spowodowana fakterm tego, że"
+        "Byłem nieobecn<u-a/y> z powodu faktu, że",
+        "Moja nieobecność była spowodowana faktem tego, że"
     ],
     "powód" : [
-        "zgubił<u-a/e>m klucze do domu.",
         "moje zwierzęta domowe urządziły strajk.",
         "nie mogł<u-a/e>m znaleźć odpowiednich skarpetek.",
         "zamienił<u-a/e>m się miejscami z kimś w lustrze.",
@@ -25,7 +24,6 @@
         "świętował<u-a/e>m Dzień Pizzy zbyt intensywnie.",
         "wpadł<u-a/e>m w pułapkę własnych myśli.",
         "zamienił<u-a/e>m miejsca z sąsiadem na cały dzień.",
-        "niespodziewanie odwiedziła mnie rodzina z daleka.",
         "czasoprzestrzeń się zacięła.",
         "nie mogł<u-a/e>m opuścić strefy komfortu.",
         "mój mózg miał awarię systemu.",
@@ -33,7 +31,28 @@
         "zabłądził<u-a/e>m w labiryncie z kartonu.",
         "brał<u-a/e>m udział w wyścigu z żółwiem.",
         "ktoś zamienił mój samochód na pojazd kosmiczny.",
-        "zgubił<u-a/e>m telefon w kieszeni spodni."
+        "zgubił<u-a/e>m telefon w kieszeni spodni.",
+        "mój alarm postanowił mieć dzień wolny.",
+        "utkn<u-e/ą>ł<u-a/e>m w rzeczywistości alternatywnej.",
+        "zjadł<u-a/e>m zbyt dużo naleśników i nie mogł<u-a/e>m się ruszyć.",
+        "sztuczna inteligencja przejęła kontrolę nad moim kalendarzem.",
+        "dysk twardy mojego mózgu wymagał defragmentacji.",
+        "zgubił<u-a/e>m się w hipermarkecie na dziale z przecenami.",
+        "przypadkowo wszedł<u-a/e>m do innego wymiaru przez lodówkę.",
+        "ktoś podmienił moje buty na łyżwy.",
+        "zbyt długo próbował<u-a/e>m wymyślić dobrą wymówkę.",
+        "kot położył się na mnie i nie mogł<u-a/e>m go przesunąć.",
+        "próbował<u-a/e>m nauczyć papugę śpiewać operę i zajęło to całą noc.",
+        "moje ubrania postanowiły się zbuntować i nie chciały mnie wpuścić.",
+        "dziadek opowiadał mi historię i nagle stał<u-a/e>m się jej częścią.",
+        "złapał<u-a/e>m gumę w hulajnodze elektrycznej.",
+        "przypadkowo klikn<u-e/ą>ł<u-a/e>m w reklamę i teraz jestem w programie ochrony świadków.",
+        "przez całą noc walczył<u-a/e>m z komarem i to on wygrał.",
+        "utkn<u-e/ą>ł<u-a/e>m w escape roomie i nikt mnie nie szukał.",
+        "moje spodnie postanowiły przejść na emeryturę w trakcie drogi.",
+        "nauczyciel matematyki dał mi zagadkę i nadal nie znalazł<u-a/e>m rozwiązania.",
+        "próbował<u-a/e>m znaleźć koniec internetu i zapomniał<u-a/e>m o czasie.",
+        "zaatakował<u-a/e>m kaktusa, ale to on wygrał."
     ],
     "pozegnanie" : [
         "Pozdrawiam.",

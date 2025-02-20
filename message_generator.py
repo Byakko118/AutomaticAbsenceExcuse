@@ -15,12 +15,12 @@ def replace_date(text):
 
 def replace_tags(message, u_gender, t_gender):
     replacements = {
-        '<u-a>': 'a' if u_gender == 'female' else '',
-        '<u-a/y>': 'a' if u_gender == 'female' else 'y',
-        '<t-a>': 'a' if t_gender == 'female' else '',
-        '<pan/pani>': 'pani' if t_gender == 'female' else 'pan',
-        '<u-a/e>': 'a' if u_gender == 'female' else 'e',
-        '<u-e/ą>': 'e' if u_gender == 'female' else 'ą'
+        '<u-a>': 'a' if u_gender == 'Female' else '',
+        '<u-a/y>': 'a' if u_gender == 'Female' else 'y',
+        '<t-a>': 'a' if t_gender == 'Female' else '',
+        '<pan/pani>': 'pani' if t_gender == 'Female' else 'pan',
+        '<u-a/e>': 'a' if u_gender == 'Female' else 'e',
+        '<u-e/ą>': 'e' if u_gender == 'Female' else 'ą'
     }
 
     for tag, replacement in replacements.items():
@@ -54,6 +54,6 @@ def generate_message():
 
     prosba = replace_date(prosba)
 
-    return f"{przywitanie}\n{prosba} {powod_wstep} {powod}\n{pozegnanie}"
+    return f"{przywitanie} {prosba} {powod_wstep} {powod} {pozegnanie}"
 
 print(generate_message())
